@@ -965,6 +965,21 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cryptocat/Cryptocat-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(PODS_ROOT)/XMPPFramework/module",
+					"$(SDKROOT)/usr/include/libresolv",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/TBMultipartyProtocolManager\"",
+					"\"${PODS_ROOT}/Headers/Public/TBOTRManager\"",
+					"\"${PODS_ROOT}/Headers/Public/XMPPFramework\"",
+					"${PODS_ROOT}/Headers",
+				);
 				INFOPLIST_FILE = "Cryptocat/Cryptocat-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -987,6 +1002,21 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cryptocat/Cryptocat-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(PODS_ROOT)/XMPPFramework/module",
+					"$(SDKROOT)/usr/include/libresolv",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/TBMultipartyProtocolManager\"",
+					"\"${PODS_ROOT}/Headers/Public/TBOTRManager\"",
+					"\"${PODS_ROOT}/Headers/Public/XMPPFramework\"",
+					"${PODS_ROOT}/Headers",
+				);
 				INFOPLIST_FILE = "Cryptocat/Cryptocat-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
