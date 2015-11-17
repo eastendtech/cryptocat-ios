@@ -88,7 +88,7 @@
   if (self=[super init]) {
     _me = nil;
     _xmppStream = [[XMPPStream alloc] init];
-    _xmppStream.startTLSPolicy = XMPPStreamStartTLSPolicyRequired;
+    _xmppStream.startTLSPolicy = XMPPStreamStartTLSPolicyAllowed;
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
 
 #if !TARGET_IPHONE_SIMULATOR
@@ -287,6 +287,7 @@
                                              object:nil];
   // Make sure we have a secure connection, otherwise abort completely
   if (self.isStartTLS != YES) {
+      NSLog(@"TLS issue");
     [self.delegate XMPPManagerDidFailToConnect:self];
   }
   else {
@@ -428,6 +429,7 @@
     }
     // - if we weren't connected -> notify of an authentication failure
     else if (error!=nil) {
+      NSLog(@"Error: %@", [error localizedDescription]);
       self.isConnected = NO;
       self.isConnecting = NO;
       if ([self.delegate respondsToSelector:@selector(XMPPManagerDidFailToConnect:)]) {

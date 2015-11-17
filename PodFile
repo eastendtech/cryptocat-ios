@@ -1,8 +1,9 @@
 platform :ios, '7.0'
 pod 'AFNetworking/Reachability', '2.0.3'
-pod 'XMPPFramework'
+pod 'XMPPFramework', :podspec => 'https://raw.githubusercontent.com/andrey-justo-movile/XMPPFramework/3.7.2/XMPPFramework.podspec.json'
 pod 'TBOTRManager', :git => 'https://github.com/tbalthazar/TBOTRManager.git'
 pod 'TBMultipartyProtocolManager', :git => 'https://github.com/tbalthazar/TBMultipartyProtocolManager.git'
+pod 'objc-geohash', :podspec => 'https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/objc-geohash/0.0.1/objc-geohash.podspec.json'
 
 # for local dev, use local copy :
 # pod 'TBOTRManager', :path => '../TBOTRManager'

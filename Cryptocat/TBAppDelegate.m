@@ -439,9 +439,10 @@ didTryToRegisterAlreadyInUseUsername:(NSString *)username {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)XMPPManagerDidFailToConnect:(TBXMPPManager *)XMPPManager {
   if ([self isLoginScreenPresented]) {
-    NSString *message = TBLocalizedString(@"Connection failed.",
-                                          @"Connection failed. Error Message");
-    [self.loginViewController showError:[NSError tb_errorWithMessage:message]];
+      NSString *message = TBLocalizedString(@"Connection failed.",
+                                            @"Connection failed. Error Message");
+      [self.loginViewController showError:[NSError tb_errorWithMessage:message]];
+    
   }
 }
 
@@ -697,6 +698,15 @@ didAskToConnectWithRoomName:(NSString *)roomName
 }
 
 ///
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Click geohash
+#pragma mark Name room by geohash button
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 @end
