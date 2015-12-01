@@ -105,7 +105,7 @@
   
   // -- configure cells
     
-    //NEW: buttonCell2 activates GPS location to generate a room name based on GeoHash: 
+    //NEW: buttonCell2 activates GPS location to generate a room name based on GeoHash:
     self.buttonCell2 = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [self.buttonCell2 setImage:[UIImage imageNamed:@"glyphicons-341-globe"] forState:UIControlStateNormal];
     [self.buttonCell2 addTarget:self action:@selector(getGeoHash) forControlEvents:UIControlEventTouchUpInside];
@@ -232,6 +232,8 @@
 //(https://en.wikipedia.org/wiki/GeoHash)
 //Pressing the globe icon generates a 5-character geohash to represent the conversation channel for
 //that region. (c) EastEndTech 2015
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 -(void)getGeoHash
 {
@@ -254,36 +256,38 @@
 
 }
      
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-         if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-             [_locationManager startUpdatingLocation];
-         }
-
+  
+  if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+    [_locationManager startUpdatingLocation];
+  }
 
 }
      
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 -(void)locationManger:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-         NSLog(@"didFailWithError: %@", error);
-        [_locationManager stopUpdatingLocation];
+    
+  NSLog(@"didFailWithError: %@", error);
+  [_locationManager stopUpdatingLocation];
     
 }
      
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-         NSLog(@"didUpdateToLocation: %@", [locations lastObject]);
+    
+  NSLog(@"didUpdateToLocation: %@", [locations lastObject]);
          
-         CLLocation *currentLocation = (CLLocation *)[locations lastObject];
-         CLLocationCoordinate2D coord = currentLocation.coordinate;
+  CLLocation *currentLocation = (CLLocation *)[locations lastObject];
+  CLLocationCoordinate2D coord = currentLocation.coordinate;
          
-         NSString *geoHash = [GeoHash hashForLatitude:coord.latitude longitude:coord.longitude length:5];
+  NSString *geoHash = [GeoHash hashForLatitude:coord.latitude longitude:coord.longitude length:5];
          
-         [self.conversationNameField setText:geoHash];
+  [self.conversationNameField setText:geoHash];
          
-         [_locationManager stopUpdatingLocation];
+  [_locationManager stopUpdatingLocation];
          
 }
 
